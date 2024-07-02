@@ -1,65 +1,87 @@
+const axios = require("axios")
+const renderCards = require("./renderCards.js");
+const submitForm = require("./submitForm.js");
+const clearForm = require("./clearForm.js");
+
+
+
+
+
+
+// Conexión con jquery
+
+// document.addEventListener("DOMContentLoaded", () => {
+//     $.get("https://students-api.up.railway.app/movies", (data) => {
+//         renderCards(data)
+//     })
+// })
+
+
+
+
+
+
+// Conexión con axios
+
+// Forma con Promesas
+
+
+const apiUrl = "http://localhost:3000/movies"
+
+const fetchMovies = () => {
+    axios.get(apiUrl)
+        // Succes handler
+        .then((res) => {
+            renderCards(res.data)
+        })
+
+        // Error handler
+        .catch((err) => {
+            alert("Las películas no fueron obtenidas correctamente")
+            console.log(err)
+        })
+}
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    const container = document.getElementById("container");
-    
-    const fetchMovies = () => {
-        $.get("https://students-api.up.railway.app/movies", (data) => {
-            const cards = data.map((movie) => {
-                const card = document.createElement("article");
-                card.classList.add("card");
-        
-                const title = document.createElement("h3");
-                title.classList.add("card-title");
-        
-                const titleLink = document.createElement("a");
-        
-                const img = document.createElement("img");
-                img.classList.add("card-img");
-        
-                const year = document.createElement("p");
-        
-                const director = document.createElement("p");
-        
-                const duration = document.createElement("p");
-        
-                const genre = document.createElement("p");
-        
-                const rate = document.createElement("p");
-        
-        
-                titleLink.textContent = movie.title;
-                titleLink.href = "#";
-                img.src = movie.poster;
-                year.textContent = `Año: ${movie.year}`;
-                director.textContent = `Director: ${movie.director}`;
-                duration.textContent = `Duración: ${movie.duration}`;
-                genre.textContent = `Genero: ${movie.genre}`;
-                rate.textContent = `Rating: ${movie.rate}`;
-        
-                card.appendChild(title);
-                title.appendChild(titleLink);
-                card.appendChild(img);
-                card.appendChild(year);
-                card.appendChild(director);
-                card.appendChild(duration);
-                card.appendChild(genre);
-                card.appendChild(rate);
-        
-                return card;
-        
-            })
-        
-            cards.forEach((card) => {
-                container.appendChild(card);
-            })
-
-        })
+    if (document.getElementById("indexPage")) {
+        fetchMovies()
     }
 
-    fetchMovies();
 
+    if (document.getElementById("btnEnviar")) {
+        document.getElementById("btnEnviar").addEventListener("click", submitForm)
+    }
+
+    if (document.getElementById("btnLimpiar")) {
+        document.getElementById("btnLimpiar").addEventListener("click", clearForm)
+        
+    }
 })
+
+
+
+
+
+
+
+
+
+// Forma con async/await
+
+// const apiUrl = "https://students-api.up.railway.app/movies"
+
+// const fetchMovies = async () => {
+//     try {
+//         const res = await axios.get(apiUrl);
+//         renderCards(res.data)
+//     } catch (err) {
+//         console.log(err);
+//         alert("Las páliculas no fueron obtenidas correctamente")
+//     }
+// }
+
+// fetchMovies()
 
 
 

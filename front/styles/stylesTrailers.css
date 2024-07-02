@@ -37,19 +37,20 @@ img {
     object-fit: cover;
 }
 
-a{
+a {
     color: var(--Blanco);
     text-decoration: none;
 }
 
-.header {
+.header-custom {
     background-color: var(--AzulOscuro);
     padding: 15px 0;
-    margin-bottom: 130px;
+    margin-bottom: 60px;
 
 }
 
 .navbar-list {
+    margin-top: 16px;
     padding: 0;
     display: flex;
     justify-content: space-around;
@@ -57,7 +58,8 @@ a{
     list-style: none;
 }
 
-.navbar-item{
+.navbar-item {
+
     flex: 1;
     text-align: center;
 }
@@ -75,41 +77,13 @@ a{
 
 .title-main {
     text-align: center;
+    margin-bottom: 120px;
 }
 
-.cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-}
-
-.card {
+.card-trailer {
     background-color: rgba(60, 79, 101, 0.5);
+    padding: 20px;
     border-radius: 20px;
-    padding: 10px;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 20%;
-    text-align: center;
-    justify-content: center;
-    transition: box-shadow 0.3s ease;
-    
- 
+    margin: 20px;
 }
-
-.card:hover {
-    box-shadow: 0 0 10px 2px var(--Gris);
-    
-}
-
-
-.card-title a:hover{
-    text-decoration: underline;
-}
-
-
 
