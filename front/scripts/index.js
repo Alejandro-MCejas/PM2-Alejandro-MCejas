@@ -2,7 +2,7 @@ const axios = require("axios")
 const renderCards = require("./renderCards.js");
 const submitForm = require("./submitForm.js");
 const clearForm = require("./clearForm.js");
-
+require("dotenv").config()
 
 
 
@@ -26,7 +26,9 @@ const clearForm = require("./clearForm.js");
 // Forma con Promesas
 
 
-const apiUrl = "http://localhost:3000/movies"
+const apiUrl = process.env.NODE_ENV === "production"
+    ? process.env.API_URL_PROD
+    : process.env.API_URL
 
 const fetchMovies = () => {
     axios.get(apiUrl)
