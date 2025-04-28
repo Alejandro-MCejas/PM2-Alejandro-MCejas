@@ -1,5 +1,5 @@
 const axios = require('axios')
-const { AxiosDigestAuth } = require('@mhoc/axios-digest-auth')
+const createAxiosDigestAuth  = require('@mhoc/axios-digest-auth')
 require('dotenv').config()
 
 async function updateMongoWhiteList() {
@@ -14,7 +14,7 @@ async function updateMongoWhiteList() {
             comment: "ip automática del deploy (render)"
         }]
 
-        const digestAuth = new AxiosDigestAuth({
+        const digestAuth = createAxiosDigestAuth({
             username: process.env.MONGO_PUBLIC_KEY,
             password: process.env.MONGO_PRIVATE_KEY
         })
