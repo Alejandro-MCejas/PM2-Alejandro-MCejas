@@ -1,5 +1,4 @@
 const axios = require('axios')
-const createAxiosDigestAuth  = require('@mhoc/axios-digest-auth')
 require('dotenv').config()
 
 async function updateMongoWhiteList() {
@@ -14,16 +13,14 @@ async function updateMongoWhiteList() {
             comment: "ip automática del deploy (render)"
         }]
 
-        const digestAuth = createAxiosDigestAuth({
-            username: process.env.MONGO_PUBLIC_KEY,
-            password: process.env.MONGO_PRIVATE_KEY
-        })
-
-        const response = await digestAuth.request({
-            method: 'POST',
-            url: baseUrl,
-            headers: { 'Content-Type': 'application/json' },
-            data: body
+        const response = await axios.post(baseUrl, body, {
+            auth: {
+                username: process.env.MONGO_PUBLIC_KEY,
+                password: process.env.MONGO_PRIVATE_KEY
+            },
+            headers: {
+                'Content-Type': 'application/json'
+            }
         })
 
         console.log('ip añadida exitosamente a la whiteList')
