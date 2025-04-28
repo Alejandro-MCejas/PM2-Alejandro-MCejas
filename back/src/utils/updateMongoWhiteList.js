@@ -1,4 +1,5 @@
 const axios = require('axios')
+const DigestFetch = require('digest-fetch')
 require('dotenv').config()
 
 async function updateMongoWhiteList() {
@@ -13,20 +14,28 @@ async function updateMongoWhiteList() {
             comment: "ip automática del deploy (render)"
         }]
 
-        const response = await axios.post(baseUrl, body, {
-            auth: {
-                username: process.env.MONGO_PUBLIC_KEY,
-                password: process.env.MONGO_PRIVATE_KEY
-            },
-            headers: {
-                'Content-Type': 'application/json'
-            }
+        const client = new DigestFetch(
+            process.env.MONGO_PUBLIC_KEY,
+            process.env.MONGO_PRIVATE_KEY
+        )
+
+        const response = await client.fetch(baseUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(body)
         })
+
+        if (!response.ok) {
+            const errorData = await response.text()
+            throw new Error(`Error en mongo api: ${errorData}`)
+        }
+
+        const data = await response.json()
 
         console.log('ip añadida exitosamente a la whiteList')
 
     } catch (error) {
-        console.error('Error al añadir la ip a la whiteList: ', error.response ? error.response.data : error.message);
+        console.error('Error al añadir la ip a la whiteList: ', error.message);
         throw error
     }
 }
