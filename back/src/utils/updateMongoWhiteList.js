@@ -1,5 +1,5 @@
 const axios = require('axios')
-const DigestFetch = require('digest-fetch')
+const { DigestFetch } = require('digest-fetch')
 require('dotenv').config()
 
 async function updateMongoWhiteList() {
