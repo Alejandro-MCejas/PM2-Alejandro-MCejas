@@ -1,3 +1,9 @@
+@import './stylesForm.css';
+@import './stylesTrailers.css';
+
+
+
+
 :root {
     --AzulOscuro: #27374D;
     --Gris: #7d8a9791;
