@@ -13,12 +13,24 @@ module.exports = {
         clean: true
     },
     module: {
-        rules: [{test: /\.css$/, use: ["style-loader", "css-loader"]}]
+        rules: [{ test: /\.css$/, use: ["style-loader", "css-loader"] }]
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: './index.html',
             filename: "index.html"
+        }),
+        new HtmlWebpackPlugin({
+            template: './pages/proximosEstrenos.html',
+            filename: "proximosEstrenos.html"
+        }),
+        new HtmlWebpackPlugin({
+            template: './pages/trailers.html',
+            filename: "trailers.html"
+        }),
+        new HtmlWebpackPlugin({
+            template: './pages/formulario.html',
+            filename: "formulario.html"
         })
     ]
 }
