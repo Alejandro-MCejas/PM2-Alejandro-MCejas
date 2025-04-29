@@ -7,6 +7,7 @@ const clearForm = require("./clearForm.js");
 
 
 
+
 // Conexión con jquery
 
 // document.addEventListener("DOMContentLoaded", () => {
