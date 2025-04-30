@@ -1,0 +1,120 @@
+:root {
+    --AzulOscuro: #27374D;
+    --Gris: #7d8a9791;
+    --AzulOscuro2: #3c4f65;
+    --Blanco: #E9ECEF;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+
+    font-family: 'Roboto', sans-serif;
+    color: var(--Blanco);
+
+    background-image: url(../images/Fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+a{
+    color: var(--Blanco);
+    text-decoration: none;
+}
+
+.header {
+    background-color: var(--AzulOscuro);
+    padding: 15px 0;
+    margin-bottom: 130px;
+}
+
+.navbar-list {
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+.navbar-item{
+    flex: 1;
+    text-align: center;
+}
+
+.navbar-link {
+    color: var(--Blanco);
+    background-color: var(--AzulOscuro2);
+    padding: 10px 50px;
+    border-radius: 20px;
+}
+
+.navbar-link:hover {
+    background-color: var(--Gris);
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    background-color: rgba(60, 79, 101, 0.5);
+    margin: 0 auto;
+    margin-bottom: 80px;
+    width: 70%;
+    padding: 40px 0;
+    border-radius: 20px;
+}
+h2{
+    text-align: center;
+}
+
+.input_container{
+    display: flex;
+    flex-direction: column;
+    background-color: #27374D;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.label_form{
+    margin-bottom: 20px;
+}
+
+.input_form{
+    color: var(--Blanco);
+    background-color: var(--AzulOscuro2);
+    border: none;
+    border-radius: 10px;
+    height: 35px;
+}
+
+.input_form::placeholder{
+    color: #c0c4c7e8;
+}
+
+.btn_form_container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn_form{
+    margin: 20px;
+    padding: 6px 25px;
+    cursor: pointer;
+}
+

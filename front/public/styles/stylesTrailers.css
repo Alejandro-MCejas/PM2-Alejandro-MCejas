@@ -1,0 +1,89 @@
+:root {
+    --AzulOscuro: #27374D;
+    --Gris: #7d8a9791;
+    --AzulOscuro2: #3c4f65;
+    --Blanco: #E9ECEF;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+
+    font-family: 'Roboto', sans-serif;
+    color: var(--Blanco);
+
+    background-image: url(../images/Fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+img {
+    max-width: 100%;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+}
+
+a {
+    color: var(--Blanco);
+    text-decoration: none;
+}
+
+.header-custom {
+    background-color: var(--AzulOscuro);
+    padding: 15px 0;
+    margin-bottom: 60px;
+
+}
+
+.navbar-list {
+    margin-top: 16px;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+.navbar-item {
+
+    flex: 1;
+    text-align: center;
+}
+
+.navbar-link {
+    color: var(--Blanco);
+    background-color: var(--AzulOscuro2);
+    padding: 10px 50px;
+    border-radius: 20px;
+}
+
+.navbar-link:hover {
+    background-color: var(--Gris);
+}
+
+.title-main {
+    text-align: center;
+    margin-bottom: 120px;
+}
+
+.card-trailer {
+    background-color: rgba(60, 79, 101, 0.5);
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px;
+}
+
