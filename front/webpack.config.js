@@ -36,7 +36,8 @@ module.exports = {
         }),
         new CopyPlugin({
             patterns: [
-                {from: "styles", to: "styles"}
+                {from: "styles", to: "styles"},
+                {from: "images", to: "images"}
             ]
         })
     ]
