@@ -2,8 +2,7 @@ const axios = require("axios")
 const renderCards = require("./renderCards.js");
 const submitForm = require("./submitForm.js");
 const clearForm = require("./clearForm.js");
-import '../styles/reset.css'
-import '../styles/styles.css'
+
 
 
 
